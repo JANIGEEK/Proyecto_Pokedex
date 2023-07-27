@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="css/style.css" />
+    <!--BOOSTRAP-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="index.html">
+          <img src="img/logo.svg" alt="Logo" />
+        </a>
+
+        <div class="d-flex">
+          <form class="d-flex" action="" id="poke-search">
+            
+            <input
+              class="form-control me-2"
+              name="pokemonSearch"
+              type="text"
+              placeholder="Buscar Pokèmon"
+              aria-label="Search"
+              id="Search"
+            />
+            <button class="search btn btn-outline-success" type="submit">
+              Buscar
+            </button>
+          </form>
+
+          <div class="dropdown">
+            <button
+              class="search btn btn-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src="img/filtro.png" alt="" />Filtrar
+            </button>
+            <ul class="filter dropdown-menu">
+              <span class="d-flex justify-content-around">Tipo</span>
+              <li class="d-flex justify-content-end">
+                <div class="group-type">
+                  <button class="btn btn-header" id="ver-todos">
+                    Ver todos
+                  </button>
+                </div>
+              </li>
+              <li class="d-flex justify-content-end">
+                <div class="group-type">
+                  <button class="btn btn-header normal" id="normal">
+                    Normal
+                  </button>
+                </div>
+              </li>
+              <li class="d-flex justify-content-end">
+                <div class="group-type">
+                  <button class="btn btn-header grass" id="grass">
+                    Planta
+                  </button>
+                </div>
+              </li>
+              <li class="d-flex justify-content-end">
+                <div class="group-type">
+                  <button class="btn btn-header fire" id="fire">Fuego</button>
+                </div>
+              </li>
+              <li class="d-flex justify-content-end">
+                <div class="group-type">
+                  <button class="btn btn-header bug" id="bug">Bicho</button>
+                </div>
+              </li>
+              <li class="d-flex justify-content-end">
+                <div class="group-type">
+                  <button class="btn btn-header fairy" id="fairy">Hada</button>
+                </div>
+              </li>
+              <li class="d-flex justify-content-end">
+                <div class="group-type">
+                  <button class="btn btn-header dragon" id="dragon">
+                    Dragon
+                  </button>
+                </div>
+              </li>
+              <li class="d-flex justify-content-end">
+                <div class="group-type">
+                  <button class="btn btn-header ghost" id="ghost">
+                    Fantasma
+                  </button>
+                </div>
+              </li>
+              <li class="d-flex justify-content-end">
+                <div class="group-type">
+                  <button class="btn btn-header ground" id="ground">
+                    Tierra
+                  </button>
+                </div>
+              </li>
+              <li class="d-flex justify-content-end">
+                <div class="group-type">
+                  <button class="btn btn-header psychic" id="psychic">
+                    Psíquico
+                  </button>
+                </div>
+              </li>
+              <li class="d-flex justify-content-end">
+                <div class="group-type">
+                  <button class="btn btn-header steel" id="steel">Acero</button>
+                </div>
+              </li>
+              <li class="d-flex justify-content-end">
+                <div class="group-type">
+                  <button class="btn btn-header electric" id="electric">
+                    Electrico
+                  </button>
+                </div>
+              </li>
+              <li class="d-flex justify-content-end">
+                <div class="group-type">
+                  <button class="btn btn-header dark" id="dark">Oscuro</button>
+                </div>
+              </li>
+              <li class="d-flex justify-content-end">
+                <div class="group-type">
+                  <button class="btn btn-header fighting" id="fighting">
+                    Lucha
+                  </button>
+                </div>
+              </li>
+              <li class="d-flex justify-content-end">
+                <div class="group-type">
+                  <button class="btn btn-header flying" id="flying">
+                    Volador
+                  </button>
+                </div>
+              </li>
+              <li class="d-flex justify-content-end">
+                <div class="group-type">
+                  <button class="btn btn-header ice" id="ice">Hielo</button>
+                </div>
+              </li>
+              <li class="d-flex justify-content-end">
+                <div class="group-type">
+                  <button class="btn btn-header poison" id="poison">
+                    Veneno
+                  </button>
+                </div>
+              </li>
+              <li class="d-flex justify-content-end">
+                <div class="group-type">
+                  <button class="btn btn-header rock" id="rock">Roca</button>
+                </div>
+              </li>
+              <li class="d-flex justify-content-end">
+                <div class="group-type">
+                  <button class="btn btn-header water" id="water">Agua</button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div id="all">
+        <!--class="d-flex justify-content-between flex-wrap"-->
+        <div
+          class="pokemon-container d-flex justify-content-between flex-wrap"
+          id="listPokemon"
+        >
+
+
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="d-flex justify-content-around" id="bar-section">
+        <nav class="pagination" aria-label="...">
+          <ul class="pagination">
+            <li class="page-item" id="previous">
+              <a class="page-link" tabindex="-1">Anterior</a>
+            </li>
+            <li class="page-item" id="next">
+              <a class="page-link">Siguiente</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="d-flex justify-content-around">
+        <div id="spinner" class="spinner-border text-light" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <!--JavaScript-->
+    <script src="js/main.js"></script>
+  </body>
+</html>
